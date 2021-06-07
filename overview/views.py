@@ -31,5 +31,18 @@ def viewpdf(request):
     path = "static/pdf/"+request.session["name"]+".pdf"
     return FileResponse(open(path, 'rb'), content_type='application/pdf')
 
+def publish(request):
+    num = request.session["file_id"]
+    file = models.FileInfo.objects.get(file_id=num)
+    file.publish_state = "已公开"
+    file.save()
+    return render(request,'overview/overview.html',{'FileInfo':file})
+
+def priavte(request):
+    num = request.session["file_id"]
+    file = models.FileInfo.objects.get(file_id=num)
+    file.publish_state = "未公开"
+    file.save()
+    return render(request,'overview/overview.html',{'FileInfo':file})
 
 

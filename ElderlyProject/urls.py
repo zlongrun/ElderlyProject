@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf.urls import include
 from login.views import index, login,register,logout,info_show,info_edit,myfiles
 from chat.views import chat
-from overview.views import viewdoc, overview, viewpdf
+from overview.views import viewdoc, overview, viewpdf, publish, priavte
 from upload.views import upload
 
 urlpatterns = [
@@ -36,5 +36,7 @@ urlpatterns = [
     path('overview/<int:num>/',overview),
     path('upload/',upload),
     path('myfiles/',myfiles),
+    path('publish/',publish),
+    path('private/',priavte),
 ]
 

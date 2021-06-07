@@ -33,7 +33,7 @@ def upload(request):
             new_file.prices = prices
             new_file.topic = topic
             new_file.type = filetype
-            #new_file.src = src
+            new_file.src = src
             new_file.file = file
             
             new_file.save()

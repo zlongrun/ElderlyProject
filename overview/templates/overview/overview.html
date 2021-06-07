@@ -49,6 +49,12 @@
         {% else %}
             <li><a href="/viewpdf/">预览文件内容</a></li>
         {% endif %}
+        {% if FileInfo.publish_state == '已公开' %}
+            <li><a href="/private/">设置为非公开</a></li>
+        {% else %}
+            <li><a href="/publish/">设置为公开</a></li>
+        {% endif %}
+        <li><a href="/myfiles/">返回我的文档空间</a></li>
         <li><a href="/chat/">返回聊天页面</a></li>
     </div>
     </div>
