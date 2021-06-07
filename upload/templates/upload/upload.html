@@ -1,0 +1,42 @@
+{% extends 'upload/base.html' %}
+{% load static %}
+{% block title %}文件上传{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+          <form action="/upload/" method="post" enctype="multipart/form-data">
+
+              {% csrf_token %}
+
+              <h2 class="text-center">请上传文件并填写文件信息</h2>
+              <div class="form-group">
+                  {{ upload_form.filename.label_tag }}
+                  {{ upload_form.filename}}
+              </div>
+              <div class="form-group">
+                {{ upload_form.filetype.label_tag }}
+                {{ upload_form.filetype}}
+            </div>
+              <div class="form-group">
+                  {{ upload_form.filesrc.label_tag }}
+                  {{ upload_form.filesrc }}
+              </div>
+              <div class="form-group">
+                  {{ upload_form.prices.label_tag }}
+                  {{ upload_form.prices }}
+              </div>
+              <div class="form-group">
+                  {{ upload_form.topic.label_tag }}
+                  {{ upload_form.topic }}
+              </div>
+
+              <button type="reset" class="btn btn-default pull-left">重置</button>
+              <button type="submit" class="btn btn-primary pull-right">提交</button>
+
+          </form>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}

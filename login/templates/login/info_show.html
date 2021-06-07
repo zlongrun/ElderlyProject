@@ -1,0 +1,106 @@
+{% extends "login/base.html" %}
+{% load static %}
+{% block title %}用户信息管理{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2 class="text-center">我的资料</h2>
+    <div class="col-md-4 col-md-offset-4">
+        <div class="row">
+            <div class="form-group">
+                <span>用户编号：</span>
+                {{ UserInfo.number }}
+            </div>
+        </div>
+        <div class="row">
+        <div class="form-group">
+            <span>用户名：</span>
+            {{ UserInfo.username }}
+        </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>真实姓名：</span>
+                {{ UserInfo.realname }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>邮箱：</span>
+                {{ UserInfo.email }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>性别：</span>
+                {{ UserInfo.sex }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>权限：</span>
+                {{ UserInfo.right }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <span>所在地区（省市一级）：</span>
+                {{ UserInfo.region }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>地址：</span>
+                {{ UserInfo.address }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>邮政编码：</span>
+                {{ UserInfo.zip }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>传真：</span>
+                {{ UserInfo.fax }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>座机号码：</span>
+                {{ UserInfo.phone }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>手机号码：</span>
+                {{ UserInfo.mobile }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>身份证号：</span>
+                {{ UserInfo.ID_card }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>注册时间：</span>
+                {{ UserInfo.c_time }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>简介：</span>
+                {{ UserInfo.about }}
+            </div>
+        </div>
+        <li><a href="/info_edit/">修改</a></li>
+        <li><a href="/index/">返回主页</a></li>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'login/base.html' %}
+{% load static %}
+{% block title %}用户信息修改{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+          <form action="/info_edit/" method="post">
+
+              {% csrf_token %}
+
+              <h2 class="text-center">请修改个人信息！</h2>
+              <div class="form-group">
+                  {{ infoedit_form.username.label_tag }}
+                  {{ infoedit_form.username}}
+              </div>
+              <div class="form-group">
+                {{ infoedit_form.realname.label_tag }}
+                {{ infoedit_form.realname}}
+            </div>
+              <div class="form-group">
+                  {{ infoedit_form.email.label_tag }}
+                  {{ infoedit_form.email }}
+              </div>
+              <div class="form-group">
+                  {{ infoedit_form.sex.label_tag }}
+                  {{ infoedit_form.sex }}
+              </div>
+              <div class="form-group">
+                  {{ infoedit_form.region.label_tag }}
+                  {{ infoedit_form.region }}
+              </div>
+              <div class="form-group">
+                  {{ infoedit_form.address.label_tag }}
+                  {{ infoedit_form.address }}
+              </div>
+              <div class="form-group">
+                {{ infoedit_form.zip.label_tag }}
+                {{ infoedit_form.zip }}
+            </div>
+            <div class="form-group">
+                {{ infoedit_form.fax.label_tag }}
+                {{ infoedit_form.fax }}
+            </div>
+            <div class="form-group">
+                {{ infoedit_form.phone.label_tag }}
+                {{ infoedit_form.phone }}
+            </div>
+            <div class="form-group">
+                {{ infoedit_form.mobile.label_tag }}
+                {{ infoedit_form.mobile }}
+            </div>
+            <div class="form-group">
+                {{ infoedit_form.ID_card.label_tag }}
+                {{ infoedit_form.ID_card }}
+            </div>
+            <div class="form-group">
+                {{ infoedit_form.about.label_tag }}
+                {{ infoedit_form.about }}
+            </div>
+
+              <button type="reset" class="btn btn-default pull-left">重置</button>
+              <button type="submit" class="btn btn-primary pull-right">提交</button>
+
+          </form>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}

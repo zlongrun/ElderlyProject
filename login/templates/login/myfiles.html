@@ -1,0 +1,27 @@
+{% extends 'login/base.html' %}
+{% block title %}我的文件空间{% endblock %}
+{% block content %}
+    
+    <h1>未公开文件：</h1>
+    {% if private_files %}
+        <ul>
+        {% for file in private_files %}
+            <li><a href="/overview/{{file.file_id}}/">{{file.name}}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>无未公开文件</p>
+    {% endif %}
+    
+    <h1>已公开文件：</h1>
+    {% if public_files %}
+        <ul>
+        {% for file in public_files %}
+            <li><a href="/overview/{{file.file_id}}/">{{file.name}}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>无已公开文件</p>
+    {% endif %}
+
+{% endblock %}

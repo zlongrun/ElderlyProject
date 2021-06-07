@@ -1,0 +1,55 @@
+{% extends "overview/base.html" %}
+{% load static %}
+{% block title %}文件信息预览{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2 class="text-center">文件信息</h2>
+    <div class="col-md-4 col-md-offset-4">
+        <div class="row">
+            <div class="form-group">
+                <span>文件id：</span>
+                {{ FileInfo.file_id }}
+            </div>
+        </div>
+        <div class="row">
+        <div class="form-group">
+            <span>文件名：</span>
+            {{ FileInfo.name }}
+        </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>文件上传者：</span>
+                {{ FileInfo.uploader }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>文件类型：</span>
+                {{ FileInfo.type }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>所需积分：</span>
+                {{ FileInfo.prices }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span>文件主题：</span>
+                {{ FileInfo.topic }}
+            </div>
+        </div>
+        {% if FileInfo.type == '.docx' %}
+            <li><a href="/viewdoc/">预览文件内容</a></li>
+        {% else %}
+            <li><a href="/viewpdf/">预览文件内容</a></li>
+        {% endif %}
+        <li><a href="/chat/">返回聊天页面</a></li>
+    </div>
+    </div>
+{% endblock %}
